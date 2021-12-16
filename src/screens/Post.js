@@ -23,6 +23,7 @@ export const Post = ({ route }) => {
                         <View key={comment.id} style={styles.post}>
                             <Text>{comment.body}</Text>
                             <Text>{comment.email}</Text>
+                            <Text>hiiii</Text>
                         </View>
                     ))}
                 </React.Fragment>
