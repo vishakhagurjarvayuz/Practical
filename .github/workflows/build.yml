@@ -13,18 +13,20 @@ jobs:
           npm install
   build-android:
     needs: install-and-test
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install npm dependencies
         run: |
           npm install
+      - name: Prescript
+        run: |
+          chmod 755 gradlew
       - name: Build Android Release
         run: |
-          cd android && ./gradlew assembleRelease
+          cd android && /.gradlew installRelease
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
-          
