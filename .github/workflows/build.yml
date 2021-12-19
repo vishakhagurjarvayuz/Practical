@@ -24,7 +24,7 @@ jobs:
           chmod 755 gradlew
       - name: Build Android Release
         run: |
-          cd android && gradlew installRelease
+          cd android && ./gradlew installRelease
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
